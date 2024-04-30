@@ -1,6 +1,6 @@
 name: "Samsung TV Remote"
 description: "Local http server to send commands to samsung tv"
-version: "1.0.0"
+version: "1.0.1"
 slug: "samsung_tv_remote"
 init: false
 arch:
@@ -11,4 +11,4 @@ arch:
   - i386
 startup: services  
 ports:
-  8000/tcp: 8000  
+  8000/tcp: 8001
