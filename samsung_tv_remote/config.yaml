@@ -1,0 +1,14 @@
+name: "Samsung TV Remote"
+description: "Local http server to send commands to samsung tv"
+version: "1.0.0"
+slug: "samsung_tv_remote"
+init: false
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+startup: services  
+ports:
+  8000/tcp: 8000  
