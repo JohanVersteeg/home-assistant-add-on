@@ -16,17 +16,22 @@ app.get('/screen-on', (req, res) => {
 })
 
 app.get('/send-key/:key', (req, res) => {
+    var key = req.params.key;
+    key = key.toUpperCase();
+    if(!key.startsWith("KEY_"))
+      key = "KEY_" + key;
     remote.isAlive((err) => {
         if (err) {
-            console.error('TV is offline');
+            console.error('TV is offline when sending key ' + key);
         } else {
-            remote.send(req.params.key, (err) => {
+            remote.send(key, (err) => {
                 if (err) {
-                    console.error("Error sending key " +  req.params.key);
+                    console.error("Error sending key " +  key);
                     console.error(err);
+                    res.send("Error sending key " +  key);
                 } else {
-                    console.log("Finished sending key " +  req.params.key);
-                    res.send("Finished sending key " +  req.params.key);
+                    console.log("Finished sending key " +  key);
+                    res.send("Finished sending key " +  key);
                 }
             });
         }
