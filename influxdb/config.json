@@ -1,6 +1,6 @@
 {
   "name": "InfluxDB",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "slug": "influxdb",
   "description": "Time-series database for storing sensor data",
   "url": "https://www.influxdata.com/",
@@ -13,7 +13,7 @@
     "8086/tcp": 8086
   },
   "host_network": true,
-  "ingress": true,
-  "ingress_port": 8086,
+  "webui": "http://[HOST]:8086",
+  "ingress": false,
   "panel_icon": "mdi:database"
 }
