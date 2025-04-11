@@ -13,7 +13,7 @@
     "8086/tcp": 8086
   },
   "host_network": true,
-  "webui": "http://[HOST]:8086",
+  "webui": "https://[HOST]:8086",
   "ingress": false,
   "panel_icon": "mdi:database"
 }
