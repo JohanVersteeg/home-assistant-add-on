@@ -1,6 +1,6 @@
 {
   "name": "InfluxDB",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "slug": "influxdb",
   "description": "Time-series database for storing sensor data",
   "url": "https://www.influxdata.com/",
