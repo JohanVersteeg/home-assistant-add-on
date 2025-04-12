@@ -14,9 +14,5 @@
   "map": ["influxdb2:rw"],
   "host_network": true,
   "privileged": [],
-  "tmpfs": false,
-  "panel_icon": "mdi:database",
-  "panel_title": "InfluxDB",
-  "ingress": true,
-  "ingress_port": 8086
+  "tmpfs": false
 }
