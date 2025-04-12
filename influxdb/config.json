@@ -1,9 +1,8 @@
 {
   "name": "InfluxDB",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "slug": "influxdb",
-  "description": "Time-series database for storing sensor data",
-  "url": "https://www.influxdata.com/",
+  "description": "InfluxDB v2 time-series database",
   "arch": ["aarch64", "amd64", "armv7"],
   "startup": "services",
   "boot": "auto",
@@ -12,8 +11,12 @@
   "ports": {
     "8086/tcp": 8086
   },
+  "map": ["influxdb2:rw"],
   "host_network": true,
-  "webui": "https://[HOST]:8086",
-  "ingress": false,
-  "panel_icon": "mdi:database"
+  "privileged": [],
+  "tmpfs": false,
+  "panel_icon": "mdi:database",
+  "panel_title": "InfluxDB",
+  "ingress": true,
+  "ingress_port": 8086
 }
