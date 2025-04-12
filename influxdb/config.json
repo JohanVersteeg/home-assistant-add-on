@@ -1,6 +1,6 @@
 {
   "name": "InfluxDB",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "slug": "influxdb",
   "description": "InfluxDB v2 time-series database",
   "arch": ["aarch64", "amd64", "armv7"],
