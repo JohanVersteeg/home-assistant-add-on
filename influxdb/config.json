@@ -11,6 +11,5 @@
   "ports": {
     "8086/tcp": 8086
   },
-  "map": ["influxdb2:rw"],
   "host_network": true
 }
