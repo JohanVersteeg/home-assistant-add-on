@@ -32,5 +32,5 @@ app.listen(port, () => {
 
 const SamsungRemote = require('samsung-remote');
 const remote = new SamsungRemote({
-    ip: '192.168.2.17'
+    ip: '192.168.2.18'
 });
