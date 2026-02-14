@@ -1,0 +1,12 @@
+name: "URL Cast"
+description: "Cast an url to a chromecast"
+version: "1.0.0"
+slug: "url-cast"
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+startup: services
+ports:
+  8002/tcp: 8002
