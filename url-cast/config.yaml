@@ -1,6 +1,6 @@
 name: "URL Cast"
 description: "Cast an url to a chromecast"
-version: "1.0.3"
+version: "1.0.4"
 slug: "url-cast"
 arch:
   - armhf
@@ -8,4 +8,5 @@ arch:
   - aarch64
   - amd64
 startup: services
-network_mode: host
+ports:
+  5000/tcp: 5000
