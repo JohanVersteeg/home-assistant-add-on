@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  url-cast:
+    container_name: url-cast-app
+    # "build: ." tells Docker to look for the 'Dockerfile' in the current directory
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    
+    restart: unless-stopped
+    
+    # Critical for Chromecast discovery (mDNS/UDP 5353)
+    network_mode: host
+
+    # Optional: If your app needs to know its own port
+    environment:
+      - APP_PORT=5000
+      - CHROMECAST_DEBUG=true 
+
+    # Ensure the container has the right permissions for network scanning
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
