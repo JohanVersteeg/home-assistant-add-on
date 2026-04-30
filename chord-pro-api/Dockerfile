@@ -1,4 +1,4 @@
-ARG BUILD_FROM=registry.gitlab.com/pro-chords/azure-functions:latest
+ARG BUILD_FROM=registry.gitlab.com/pro-chords/api:latest
 FROM $BUILD_FROM
 
 RUN apt-get update \
