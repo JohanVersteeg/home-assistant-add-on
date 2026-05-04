@@ -13,4 +13,9 @@ if [ -f "$OPTIONS" ]; then
     done < <(jq -r '.allowed_origins[]?' "$OPTIONS")
 fi
 
-exec dotnet AzureFunctions.dll
+dotnet AzureFunctions.dll &
+PID=$!
+
+trap "kill $PID; wait $PID" SIGTERM SIGINT
+
+wait $PID
