@@ -1,6 +1,6 @@
 name: "ProChord API"
 description: "ProChord API backend (ASP.NET Core), built from the GitLab container registry."
-version: "1.0.3"
+version: "1.0.4"
 slug: "chord_pro_api"
 init: false
 startup: services
@@ -16,6 +16,7 @@ options:
   allowed_origins:
     - "http://127.0.0.1:8085"
     - "http://localhost:4200"
+    - "http://localhost:4210"
 schema:
   gitlab_base_url: str
   allowed_origins:
