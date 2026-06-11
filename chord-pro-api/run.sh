@@ -13,6 +13,10 @@ if [ -f "$OPTIONS" ]; then
     done < <(jq -r '.allowed_origins[]?' "$OPTIONS")
 fi
 
+echo "=== ENV DEBUG ==="
+env | grep -E "GitlabBaseUrl|AllowedOrigins" || echo "No matching vars found"
+echo "=== END DEBUG ==="
+
 dotnet AzureFunctions.dll &
 PID=$!
 
