@@ -1,6 +1,6 @@
 name: "ProChord API"
 description: "ProChord API backend (ASP.NET Core), built from the GitLab container registry."
-version: "1.0.5"
+version: "1.0.6"
 slug: "chord_pro_api"
 init: false
 startup: services

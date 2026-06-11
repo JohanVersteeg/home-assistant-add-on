@@ -13,13 +13,13 @@ if [ -f "$OPTIONS" ]; then
     done < <(jq -r '.allowed_origins[]?' "$OPTIONS")
 fi
 
-echo "=== ENV DEBUG ==="
-env | grep -E "GitlabBaseUrl|AllowedOrigins" || echo "No matching vars found"
-echo "=== END DEBUG ==="
+echo "[INFO] GitlabBaseUrl=${GitlabBaseUrl}"
+env | grep -E "^AllowedOrigins__" | sort || echo "[INFO] No AllowedOrigins vars found"
 
-dotnet AzureFunctions.dll &
+dotnet Api.dll &
 PID=$!
 
-trap "kill $PID; wait $PID" SIGTERM SIGINT
+trap "kill -TERM $PID" SIGTERM SIGINT
 
 wait $PID
+exit $?
