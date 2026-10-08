@@ -1,0 +1,28 @@
+name: "HA Webhook Proxy"
+description: "Exposes only explicitly allowed Home Assistant webhooks (/api/webhook/<id>), meant to sit behind a Cloudflare Tunnel."
+version: "1.0.0"
+slug: "ha_webhook_proxy"
+init: false
+startup: application
+arch:
+  - amd64
+  - aarch64
+ports:
+  8080/tcp: 8099
+ports_description:
+  8080/tcp: "Webhook proxy endpoint (HTTP, point the Cloudflare Tunnel here)"
+options:
+  ha_url: "http://homeassistant:8123"
+  allowed_webhook_ids: []
+  trusted_proxies:
+    - "172.30.32.0/23"
+  rate_limit_per_minute: 30
+  max_body_size_kb: 64
+schema:
+  ha_url: url
+  allowed_webhook_ids:
+    - password
+  trusted_proxies:
+    - str
+  rate_limit_per_minute: int(1,600)
+  max_body_size_kb: int(1,10240)
